@@ -1,0 +1,19 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          # Gets rid of PostgreSql's related exception:
+          # Disabling contextual LOB creation as createClob() method threw error
+          use_jdbc_metadata_defaults: false
+        default_schema: agentmanagement
+  flyway:
+    schemas: agentmanagement
+    
+    
+keycloak:
+  auth-server-url: http://keycloak-dev.nfedev.accelya.com/auth
+  realm: NFE
+  public-client: true
+  resource: bsplink-agent-management
+  bearer-only: true
